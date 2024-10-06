@@ -1,15 +1,13 @@
 Summary:	Qt API to store passwords and other secret data securely
 Summary(pl.UTF-8):	API Qt do bezpiecznego przechowywania haseł i innych tajnych danych
 Name:		Qt6Keychain
-Version:	0.14.2
+Version:	0.14.3
 Release:	1
 License:	Modified BSD License
 Group:		Libraries
 #Source0Download: https://github.com/frankosterfeld/qtkeychain/releases
-# TODO use:
-#Source0:	https://github.com/frankosterfeld/qtkeychain/archive/%{version}/qtkeychain-%{version}.tar.gz
-Source0:	https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/%{version}.tar.gz
-# Source0-md5:	7f75753541784068400d903e0e7a0d55
+Source0:	https://github.com/frankosterfeld/qtkeychain/archive/%{version}/qtkeychain-%{version}.tar.gz
+# Source0-md5:	269fe04b6d9d3a22841695a25f1d70e6
 URL:		https://github.com/frankosterfeld/qtkeychain
 BuildRequires:	Qt6Core-devel >= 6
 BuildRequires:	Qt6DBus-devel >= 6
