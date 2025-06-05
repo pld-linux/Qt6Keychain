@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	tests	# test suite
+
 Summary:	Qt API to store passwords and other secret data securely
 Summary(pl.UTF-8):	API Qt do bezpiecznego przechowywania haseł i innych tajnych danych
 Name:		Qt6Keychain
@@ -11,6 +15,7 @@ Source0:	https://github.com/frankosterfeld/qtkeychain/archive/%{version}/qtkeych
 URL:		https://github.com/frankosterfeld/qtkeychain
 BuildRequires:	Qt6Core-devel >= 6
 BuildRequires:	Qt6DBus-devel >= 6
+%{?with_tests:BuildRequires:	Qt6Test-devel >= 6}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	libsecret-devel
 BuildRequires:	libstdc++-devel
@@ -64,6 +69,7 @@ wykorzystujących bibliotekę Qt6Keychain.
 
 %build
 %cmake -B build-qt6 \
+	%{!?with_tests:-DBUILD_TESTING:BOOL=OFF} \
 	-DBUILD_WITH_QT6:BOOL=ON \
 	-DECM_MKSPECS_INSTALL_DIR=%{_libdir}/qt6/mkspecs/modules
 %{__make} -C build-qt6
