@@ -5,13 +5,13 @@
 Summary:	Qt API to store passwords and other secret data securely
 Summary(pl.UTF-8):	API Qt do bezpiecznego przechowywania haseł i innych tajnych danych
 Name:		Qt6Keychain
-Version:	0.15.0
-Release:	2
+Version:	0.16.0
+Release:	1
 License:	Modified BSD License
 Group:		Libraries
 #Source0Download: https://github.com/frankosterfeld/qtkeychain/releases
 Source0:	https://github.com/frankosterfeld/qtkeychain/archive/%{version}/qtkeychain-%{version}.tar.gz
-# Source0-md5:	00b01588862ba1ed4e6cb81a959108c3
+# Source0-md5:	f97ec6ec37a465abdea63c2def01f280
 URL:		https://github.com/frankosterfeld/qtkeychain
 BuildRequires:	Qt6Core-devel >= 6
 BuildRequires:	Qt6DBus-devel >= 6
@@ -92,14 +92,14 @@ rm -rf $RPM_BUILD_ROOT
 %files -f qtkeychain.lang
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog ReadMe.md
-%attr(755,root,root) %{_libdir}/libqt6keychain.so.*.*
+%{_libdir}/libqt6keychain.so.*.*
 %ghost %{_libdir}/libqt6keychain.so.1
 %dir %{_datadir}/qt6keychain
 %dir %{_datadir}/qt6keychain/translations
 
 %files devel
 %defattr(644,root,root,755)
+%{_libdir}/libqt6keychain.so
 %{_includedir}/qt6keychain
 %{_libdir}/cmake/Qt6Keychain
-%{_libdir}/libqt6keychain.so
 %{_libdir}/qt6/mkspecs/modules/qt_Qt6Keychain.pri
